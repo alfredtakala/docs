@@ -9,8 +9,7 @@
 						:key="item.id"
 						:builder_defaults="defaults" />
 			</draggable>
-			<div class="v-application">
-				<div class="v-application--wrap">
+			<v-app id="inspire">
 					<v-row justify="space-around">
 					    <v-icon large color="green darken-2">mdi-domain</v-icon>
 
@@ -75,8 +74,7 @@
 					      </div>
 					    </v-col>
 					  </v-row>
-				</div>
-			</div>
+				</v-app>
 		</div>
 		<rawDisplayer class="col-4" :value="list" title="List" />
 	</div>
