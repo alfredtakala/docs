@@ -70,7 +70,7 @@
         props: ['field'],
         data() {
             if (!this.$attrs.builder_json) {
-                return
+                return {};
             }
             let redux_field = _.cloneDeep(this.$attrs.builder_json);
             let that = this;

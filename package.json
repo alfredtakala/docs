@@ -5,6 +5,7 @@
   },
   "devDependencies": {
     "@dovyp/vuepress-plugin-clipboard-copy": "^1.0.0-alpha.7",
+    "@mdi/font": "^4.5.95",
     "@vuepress/plugin-active-header-links": "next",
     "@vuepress/plugin-back-to-top": "^1.0.2",
     "@vuepress/plugin-google-analytics": "next",
@@ -29,6 +30,8 @@
     "bootstrap": "^4.3.1",
     "bootstrap-vue": "^2.0.0-rc.28",
     "vfg-field-object": "^0.0.0-development",
-    "vuepress-plugin-sitemap": "^2.1.2"
+    "vuedraggable": "^2.23.2",
+    "vuepress-plugin-sitemap": "^2.1.2",
+    "vuetify": "^2.1.3"
   }
 }
