@@ -2,7 +2,7 @@
   "type": "dimension",
   "name": "Dimension",
   "description": null,
-  "icon": null,
+  "icon": "mdi-move-resize",
   "groups": {
     "Global": ["id", "type", "title", "desc", "subtitle", "class"],
     "Advanced": ["attributes", "data", "compiler", "output", "output_variables", "permissions", "required", "default", "validate"]

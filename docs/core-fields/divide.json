@@ -2,7 +2,7 @@
   "type": "divide",
   "name": "Divide",
   "description": null,
-  "icon": null,
+  "icon": "mdi-slash-forward",
   "fields": {
     "id": {
       "name": "id",
