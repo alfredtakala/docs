@@ -2,7 +2,7 @@
   "type": "color_gradient",
   "name": "Color Gradient",
   "description": null,
-  "icon": "mdi-gradient",
+  "icon": null,
   "groups": {
     "Global": ["id", "type", "title", "desc", "subtitle", "class"],
     "Advanced": ["attributes", "data", "compiler", "output", "output_variables", "permissions", "required", "default", "validate"]

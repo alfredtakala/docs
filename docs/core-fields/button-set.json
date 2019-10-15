@@ -2,7 +2,7 @@
   "type": "button_set",
   "name": "Button Set",
   "description": null,
-  "icon": "mdi-distribute-vertical-bottom",
+  "icon": null,
   "groups": {
     "Global": ["id", "type", "title", "desc", "subtitle", "class"],
     "Advanced": ["attributes", "data", "compiler", "output", "output_variables", "permissions", "required", "default", "validate"]
