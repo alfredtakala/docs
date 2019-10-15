@@ -1,8 +1,5 @@
 <template>
-    <div>
-        <h3>{{ title }}</h3>
-        <pre>{{ valueString }}</pre>
-    </div>
+    <pre>{{ valueString }}</pre>
 </template>
 <script>
 const props = {
@@ -27,5 +24,9 @@ export default {
 <style scoped>
 pre {
     text-align: start;
+    min-height: 200px;
+    margin: 0;
+    height: 100%;
+    color: #ccc;
 }
 </style>

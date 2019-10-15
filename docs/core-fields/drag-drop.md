@@ -1,6 +1,5 @@
 # Drag & Drop
 
-## Example Declaration
 <script>
 import aceEditor from './ace-editor.json';
 import background from './background.json';
