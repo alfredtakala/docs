@@ -2,7 +2,7 @@
   "type": "textarea",
   "name": "Textarea",
   "description": null,
-  "icon": null,
+  "icon": "mdi-textarea",
   "groups": {
     "Global": ["id", "type", "title", "desc", "subtitle", "class"],
     "Advanced": ["attributes", "data", "compiler", "output", "output_variables", "permissions", "required", "default", "validate"]

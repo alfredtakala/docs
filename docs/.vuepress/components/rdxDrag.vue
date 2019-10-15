@@ -73,8 +73,7 @@ export default {
     }
     .panel-row {
         height: 300px;
-        margin-top: 5px;
-        
+        margin-top: 5px;        
     }
     .panel-row > div {
         padding-top: 0px;

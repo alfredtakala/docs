@@ -2,7 +2,7 @@
   "type": "info",
   "name": "Info",
   "description": null,
-  "icon": null,
+  "icon": "mdi-information-variant",
   "groups": {
     "Global": ["id", "type", "title", "desc", "subtitle", "class"],
     "Advanced": ["attributes", "data", "compiler", "output", "output_variables", "permissions", "required", "default", "validate"]
