@@ -61,6 +61,7 @@
 import Vuetify from 'vuetify';
 import {filter, splice, cloneDeep} from 'lodash';
 export default {
+    name: "rdxToolbar",
     components: {
         Vuetify
     },

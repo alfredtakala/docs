@@ -84,4 +84,4 @@ export default {
     }
 }
 </script>
-<drag :bundled_fields="bundledFields" :builder_defaults="defaults" />
+<rdx-drag :bundled_fields="bundledFields" :builder_defaults="defaults" />

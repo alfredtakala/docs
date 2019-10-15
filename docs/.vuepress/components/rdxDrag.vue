@@ -1,7 +1,7 @@
 <template>
     <v-app>
         <v-toolbar dense>
-            <toolbar :model="list" :all_fields="all_fields" />           
+            <rdx-toolbar :model="list" :all_fields="all_fields" />           
         </v-toolbar>
         <v-row>
             <v-col class="text-center" cols="12" sm="8">
@@ -30,10 +30,12 @@ import Vuetify from 'vuetify';
 import draggable from "vuedraggable";
 import builder from "./builder.vue";
 import rawDisplayer from "./infra/rawDisplayer";
+import rdxToolbar from "./rdxToolbar.vue";
 export default {
+    name: "rdxDrag",
     components: {
         Vuetify,
-        toolbar,
+        rdxToolbar,
         draggable,
         builder,
         rawDisplayer
