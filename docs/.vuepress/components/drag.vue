@@ -9,17 +9,15 @@
                 </template>
                 <span> {{ field.name }} </span>
             </v-tooltip>
-            <v-dialog v-model="openedFieldSelectionModal" max-width="600px">
-                <template v-slot:activator="{ on: {click: openModal} }">
-                    <v-tooltip bottom>
-                        <template v-slot:activator="{on : {mouseenter: openTooltip, blur: closeTooltip} }">
-                            <v-btn color="primary" icon v-on:click="openModal" v-on:mouseenter="openTooltip" v-on:blur="closeTooltip">
-                                <v-icon>mdi-plus-circle-outline</v-icon>
-                            </v-btn>
-                        </template>
-                        <span>Add Field</span>
-                    </v-tooltip>
+            <v-tooltip bottom>
+                <template v-slot:activator="{on : openTooltip}">
+                    <v-btn color="primary" icon v-on:click="openedFieldSelectionModal = true" v-on="openTooltip">
+                        <v-icon>mdi-plus-circle-outline</v-icon>
+                    </v-btn>
                 </template>
+                <span>Add Field</span>
+            </v-tooltip>
+            <v-dialog v-model="openedFieldSelectionModal" max-width="600px">
                 <v-card>
                     <v-card-title>
                         <span class="headline">Add Field</span>
@@ -101,7 +99,6 @@ export default {
     props: ['field'],
     data() {
         let shortcut_fields = filter(this.$attrs.bundled_fields, 'icon');
-        console.log(shortcut_fields);
         return {
             shortcut_fields: shortcut_fields,
             defaults: {},
