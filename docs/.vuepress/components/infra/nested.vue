@@ -7,9 +7,8 @@
         class="dragArea" :class="parentClass" :group="{ name: 'g1' }">
         {{level}}
         <div v-for="item in list" 
-            :key="item.domID" class="child">
-            <builder :builder_json="item" 
-                :builder_defaults="defaults" />
+            :key="item.domID" class="child" v-if="item">
+            <p>{{item.domID}}</p>
             <nested-draggable :list="item.list" :level="level + 1"/>
             
         </div>

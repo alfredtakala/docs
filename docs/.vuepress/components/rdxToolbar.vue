@@ -91,11 +91,42 @@ export default {
             // generate UNIQUE ID
             instance.domID = Math.random().toString(36).substr(2, 9);
             instance.list = [];
-            if (this.model.length > 0) {
+            /* if (this.model.length > 0) {
                 this.model[0].list.push(instance);
             }
-            else
+            else */
                 this.model.push(instance);
+            /* this.model.push({
+                  name: "task 1",
+                  tasks: [
+                    {
+                      name: "task 2",
+                      tasks: []
+                    }
+                  ]
+                });
+            /* this.model = [{
+                  name: "task 1",
+                  tasks: [
+                    {
+                      name: "task 2",
+                      tasks: []
+                    }
+                  ]
+                },
+                {
+                  name: "task 3",
+                  tasks: [
+                    {
+                      name: "task 4",
+                      tasks: []
+                    }
+                  ]
+                },
+                {
+                  name: "task 5",
+                  tasks: []
+                }]; */
         },
         // click Toolbak Icon results in new draggable element.
         onAddCommonFields(field) {
