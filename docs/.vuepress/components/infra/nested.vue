@@ -1,24 +1,49 @@
 <template>
-    <draggable class="dragArea" tag="ul" :list="tasks" :group="{ name: 'g1' }">
-        <li v-for="el in tasks" :key="el.name">
-            <p>{{ el.name }}</p>
-            <nested-draggable :tasks="el.tasks" />
-        </li>
+    <draggable
+        :list="list"
+        v-bind="dragOptions"
+        @start="drag = true"
+        @end="drag = false">
+    
+        <div v-for="{item, i} in list"
+            :key="i"> 
+            {{i}}
+            <builder :builder_json="item" :builder_defaults="defaults"  />
+            
+        </div>
+        
     </draggable>
 </template>
 <script>
 import draggable from "vuedraggable";
 export default {
+    name: "nested-draggable",
     props: {
-        tasks: {
+        list: {
             required: true,
             type: Array
+        }
+    },
+    data () {
+        return {
+            drag: false,
+            defaults: {}
         }
     },
     components: {
         draggable
     },
-    name: "nested-draggable"
+    computed: {
+        // to add transition while dragging
+        dragOptions() {
+            return {
+                animation: 200,
+                group: "description",
+                disabled: false,
+                ghostClass: "ghost"
+            };
+        }
+    }
 };
 </script>
 <style scoped>

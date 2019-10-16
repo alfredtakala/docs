@@ -24,6 +24,11 @@
                 <rawDisplayer :value="list" title="List" />
             </v-col>
         </v-row>
+        <v-row>
+            <v-col cols sm="12">
+                
+            </v-col>
+        </v-row>
     </v-app>
 </template>
 
@@ -33,6 +38,7 @@ import draggable from "vuedraggable";
 import builder from "./builder.vue";
 import rawDisplayer from "./infra/rawDisplayer";
 import rdxToolbar from "./rdxToolbar.vue";
+import nestedDraggable from "./infra/nested";
 export default {
     name: "rdxDrag",
     components: {
@@ -40,7 +46,8 @@ export default {
         rdxToolbar,
         draggable,
         builder,
-        rawDisplayer
+        rawDisplayer,
+        nestedDraggable
     },
     props: ['field'],
     data() {
