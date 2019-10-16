@@ -6,27 +6,12 @@
         <v-row class="panel-row">
             <v-col cols sm="12" md="7" class="builder-panel">
                 <div>
-                    <draggable
-                        :list="list"
-                        v-bind="dragOptions"
-                        @start="drag = true"
-                        @end="drag = false">
-                        <transition-group type="transition" :name="!drag ? 'flip-list' : null">
-                            <builder :builder_json="item" 
-                                v-for="item in list"
-                                :key="item.domID"
-                                :builder_defaults="defaults" />
-                        </transition-group>
-                    </draggable>
+                    <nested-draggable :list="list">
+                    </nested-draggable>
                 </div>
             </v-col>
             <v-col cols sm="12" md="5">
                 <rawDisplayer :value="list" title="List" />
-            </v-col>
-        </v-row>
-        <v-row>
-            <v-col cols sm="12">
-                
             </v-col>
         </v-row>
     </v-app>

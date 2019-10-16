@@ -90,7 +90,12 @@ export default {
             let instance = cloneDeep(fieldType);
             // generate UNIQUE ID
             instance.domID = Math.random().toString(36).substr(2, 9);
-            this.model.push(instance);
+            instance.list = [];
+            if (this.model.length > 0) {
+                this.model[0].list.push(instance);
+            }
+            else
+                this.model.push(instance);
         },
         // click Toolbak Icon results in new draggable element.
         onAddCommonFields(field) {

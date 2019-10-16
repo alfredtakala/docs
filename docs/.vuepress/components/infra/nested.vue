@@ -3,16 +3,20 @@
         :list="list"
         v-bind="dragOptions"
         @start="drag = true"
-        @end="drag = false">
-    
-        <div v-for="{item, i} in list"
-            :key="i"> 
-            {{i}}
-            <builder :builder_json="item" :builder_defaults="defaults"  />
-            
-        </div>
-        
+        @end="drag = false"
+        class="dragArea" :group="{ name: 'g1' }">
+        <transition-group type="transition" :name="!drag ? 'flip-list' : null">
+            <div v-for="item in list" 
+                :key="item.domID">
+                <builder :builder_json="item" 
+                    :builder_defaults="defaults" />
+                <template v-if="item && item.list && item.list.length > 0">
+                    <nested-draggable :list="item.list" />
+                </template>
+            </div>
+        </transition-group>
     </draggable>
+    
 </template>
 <script>
 import draggable from "vuedraggable";
@@ -38,7 +42,6 @@ export default {
         dragOptions() {
             return {
                 animation: 200,
-                group: "description",
                 disabled: false,
                 ghostClass: "ghost"
             };
