@@ -4,17 +4,15 @@
         v-bind="dragOptions"
         @start="drag = true"
         @end="drag = false"
-        class="dragArea" :group="{ name: 'g1' }">
-        <transition-group type="transition" :name="!drag ? 'flip-list' : null">
-            <div v-for="item in list" 
-                :key="item.domID">
-                <builder :builder_json="item" 
-                    :builder_defaults="defaults" />
-                <template v-if="item && item.list && item.list.length > 0">
-                    <nested-draggable :list="item.list" />
-                </template>
-            </div>
-        </transition-group>
+        class="dragArea" :class="parentClass" :group="{ name: 'g1' }">
+        {{level}}
+        <div v-for="item in list" 
+            :key="item.domID" class="child">
+            <builder :builder_json="item" 
+                :builder_defaults="defaults" />
+            <nested-draggable :list="item.list" :level="level + 1"/>
+            
+        </div>
     </draggable>
     
 </template>
@@ -26,6 +24,10 @@ export default {
         list: {
             required: true,
             type: Array
+        },
+        level: {
+            required: true, 
+            type: Number
         }
     },
     data () {
@@ -41,10 +43,15 @@ export default {
         // to add transition while dragging
         dragOptions() {
             return {
-                animation: 200,
+                /* animation: 200,
                 disabled: false,
-                ghostClass: "ghost"
+                ghostClass: "ghost" */
             };
+        },
+        parentClass() {
+            if (this.level == 1) return "section";
+            if (this.level == 2) return "box";
+            if (this.level == 3) return "leaf";
         }
     }
 };
@@ -52,6 +59,21 @@ export default {
 <style scoped>
 .dragArea {
     min-height: 50px;
+}
+
+.child {
+    border: 1px solid blue;
+}
+.dragArea.section {
+    outline: 2px solid;
+    margin: 10px;
+}
+.dragArea.box {
     outline: 1px dashed;
+    margin: 15px;
+}
+.dragArea.leaf {
+    outline: 1px dotted;
+    margin: 20px;
 }
 </style>

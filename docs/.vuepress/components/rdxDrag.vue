@@ -5,10 +5,8 @@
         </v-toolbar>
         <v-row class="panel-row">
             <v-col cols sm="12" md="7" class="builder-panel">
-                <div>
-                    <nested-draggable :list="list">
-                    </nested-draggable>
-                </div>
+                <nested-draggable :list="list" :level="1">
+                </nested-draggable>
             </v-col>
             <v-col cols sm="12" md="5">
                 <rawDisplayer :value="list" title="List" />
