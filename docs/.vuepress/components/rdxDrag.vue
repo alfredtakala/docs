@@ -5,7 +5,7 @@
         </v-toolbar>
         <v-row class="panel-row">
             <v-col cols sm="12" md="7" class="builder-panel">
-                <nested-drag :list="list">
+                <nested-drag :list="list" :level="0">
                 </nested-drag>
             </v-col>
             <v-col cols sm="12" md="5">
@@ -21,7 +21,6 @@ import draggable from "vuedraggable";
 import builder from "./builder.vue";
 import rawDisplayer from "./infra/rawDisplayer";
 import rdxToolbar from "./rdxToolbar.vue";
-import nestedDraggable from "./infra/nested";
 import nestedDrag from "./infra/nested-drag";
 export default {
     name: "rdxDrag",
@@ -31,7 +30,6 @@ export default {
         draggable,
         builder,
         rawDisplayer,
-        nestedDraggable,
         nestedDrag
     },
     props: ['field'],

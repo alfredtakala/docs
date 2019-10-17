@@ -454,3 +454,8 @@
         },
     }
 </script>
+<style scoped>
+.v-application code {
+    box-shadow: none;
+}
+</style>
