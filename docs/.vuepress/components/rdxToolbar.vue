@@ -60,6 +60,7 @@
 <script>
 import Vuetify from 'vuetify';
 import {filter, splice, cloneDeep} from 'lodash';
+import shortid from "shortid";
 export default {
     name: "rdxToolbar",
     components: {
@@ -89,8 +90,7 @@ export default {
         addFieldInstance(fieldType) {
             let instance = cloneDeep(fieldType);
             // generate UNIQUE ID
-            instance.domID = Math.random().toString(36).substr(2, 9);
-            instance.list = [];
+            instance.domID = shortid.generate();
             this.model.push(instance);
         },
         // click Toolbak Icon results in new draggable element.

@@ -1,11 +1,11 @@
 <template>
     <v-app>
-        <v-toolbar dense>
+        <v-card>
             <rdx-toolbar :model="list" :all_fields="all_fields" />           
-        </v-toolbar>
+        </v-card>
         <v-row class="panel-row">
             <v-col cols sm="12" md="7" class="builder-panel">
-                <nested-drag :list="list" :level="0">
+                <nested-drag :model="list" :level="0">
                 </nested-drag>
             </v-col>
             <v-col cols sm="12" md="5">
@@ -59,11 +59,12 @@ export default {
 </script>
 <style scoped>
     .v-toolbar {
-        max-height: 48px;
+        
     }
     .panel-row {
         height: 300px;
-        margin-top: 5px;        
+        margin-top: 5px;
+        overflow-y: auto;
     }
     .panel-row > div {
         padding-top: 0px;
